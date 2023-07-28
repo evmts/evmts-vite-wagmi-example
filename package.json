@@ -5,7 +5,8 @@
   "scripts": {
     "build": "vite build",
     "clean": "rm -rf node_modules && rm -rf artifacts && rm -rf dist && rm -rf cache",
-    "dev": "source .env & anvil --fork-url https://eth-mainnet.g.alchemy.com/v2/$VITE_ALCHEMY_API_KEY & vite",
+    "anvil": "source .env & anvil --fork-url https://eth-mainnet.g.alchemy.com/v2/$VITE_ALCHEMY_API_KEY",
+    "dev": "vite",
     "preinstall": "npx only-allow pnpm",
     "preview": "vite preview",
     "serve": "serve -s -l tcp://0.0.0.0:5173 dist",
