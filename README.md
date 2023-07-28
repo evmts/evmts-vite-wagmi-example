@@ -15,6 +15,26 @@ To use this plugin with Visual Studio Code, you should set your workspace's vers
 
 For instructions, see: [Using the workspace version of TypeScript](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript).
 
+# 🤝 Getting Started
+
+1. Install PNPM
+
+PNPM is similar to npm and the usage of it's cli is nearly identical to NPM but much faster at installing node_modules
+
+```
+npm install pnpm --global
+```
+
+2. Fill in environment variables with an alchemy key. To gets started quick just use the public alchemy key `_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC` but you may face rate limits
+
+```
+cp example.env .env
+```
+
+3. Start app
+
+Run `npm run dev` in your terminal. If you are not using node18 you may have to pass in `--experimental-fetch` to node. Use [NVM](https://github.com/nvm-sh/nvm) with `nvm use` command to use this workspaces node version
+
 ## ✨ What is this?
 
 This is a [Evmts](https://evmts.dev) + [wagmi](https://wagmi.sh) ! [vite](https://vitejs.dev/) boilerplate to get started using Evmts quickly
@@ -48,10 +68,6 @@ Evmts allows you to import Solidity directly into your NEXT.js typescript files 
 # 📜 Docs
 
 Evmts docs exist at [evmts.dev](https://evmts.dev). As Evmts is currently still in Alpha and following [documentation driven development](https://gist.github.com/zsup/9434452) much of the documented behavior may not be implemented yet.
-
-# 🤝 Getting Started
-
-Run `npm run dev` in your terminal. If you are not using node18 you may have to pass in `--experimental-fetch` to node. Use [NVM](https://github.com/nvm-sh/nvm) with `nvm use` command to use this workspaces node version
 
 # 🔧 Configuration
 
