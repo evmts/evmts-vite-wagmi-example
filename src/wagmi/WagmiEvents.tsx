@@ -1,4 +1,4 @@
-import { WagmiMintExample } from '../contracts/WagmiMintExample.sol'
+import { WagmiMintExample } from '../../contracts/WagmiMintExample.sol'
 import { useState } from 'react'
 import { useAccount, useBlockNumber, useContractEvent } from 'wagmi'
 

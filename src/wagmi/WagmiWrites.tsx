@@ -1,4 +1,4 @@
-import { WagmiMintExample } from '../contracts/WagmiMintExample.sol'
+import { WagmiMintExample } from '../../contracts/WagmiMintExample.sol'
 import { getRandomInt } from '../utils/getRandomInt'
 import {
 	Address,

@@ -3,9 +3,7 @@
     "plugins": [
       {
         "name": "@evmts/ts-plugin",
-        "compiler": {
-          "foundryProject": true
-        },
+        "compiler": {},
         "localContracts": {
           "contracts": [
             {

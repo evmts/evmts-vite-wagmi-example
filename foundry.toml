@@ -1,9 +1,6 @@
 [profile.default]
 solc = "0.8.20"
-src = "src/contracts"
+src = "contracts"
 test = "test"
 out = "artifacts"
-lib = ["node_modules", "../../node_modules", "lib"]
-
-allow_paths = ["../../node_modules"]
 
