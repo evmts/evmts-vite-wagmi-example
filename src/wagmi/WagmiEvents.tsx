@@ -1,9 +1,12 @@
 import { WagmiMintExample } from '../../contracts/WagmiMintExample.sol'
 import { useState } from 'react'
-import { useAccount, useBlockNumber, useContractEvent } from 'wagmi'
+import { mainnet, useAccount, useBlockNumber, useContractEvent, useNetwork } from 'wagmi'
 
 export const WagmiEvents = () => {
 	const { address } = useAccount()
+
+	const { chain = mainnet } = useNetwork()
+	const chainId = chain.id
 
 	const { data: blockNumber } = useBlockNumber()
 
@@ -15,7 +18,7 @@ export const WagmiEvents = () => {
 	 * - Don't call fn and it is an object without args
 	 * - Call fn with args and fromBlock etc. and it returns an object with args
 	 */
-	const transferEvents = WagmiMintExample.events().Transfer({
+	const transferEvents = WagmiMintExample.events({ chainId }).Transfer({
 		fromBlock: blockNumber && blockNumber - BigInt(1_000),
 		args: {
 			to: address,

@@ -2,14 +2,19 @@ import { WagmiMintExample } from '../../contracts/WagmiMintExample.sol'
 import { getRandomInt } from '../utils/getRandomInt'
 import {
 	Address,
+	mainnet,
 	useAccount,
 	useContractRead,
 	useContractWrite,
+	useNetwork,
 	useWaitForTransaction,
 } from 'wagmi'
 
 export const WagmiWrites = () => {
 	const { address, isConnected } = useAccount()
+
+	const { chain = mainnet } = useNetwork()
+	const chainId = chain.id
 
 	const { data, refetch } = useContractRead({
 		/**
@@ -25,7 +30,7 @@ export const WagmiWrites = () => {
 		 * Not calling the function will return abi and address without args
 		 * This is useful for when you want to lazily call the function like in case of useContractWrite
 		 */
-		...WagmiMintExample.write().mint,
+		...WagmiMintExample.write({ chainId }).mint,
 	})
 
 	useWaitForTransaction({
@@ -44,7 +49,7 @@ export const WagmiWrites = () => {
 			<button
 				type='button'
 				onClick={() =>
-					writeMint(WagmiMintExample.write().mint(BigInt(getRandomInt())))
+					writeMint(WagmiMintExample.write({ chainId }).mint(BigInt(getRandomInt())))
 				}
 			>
 				Mint
