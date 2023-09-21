@@ -13,25 +13,25 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@evmts/cli": "^0.8.0",
-    "@evmts/core": "^0.8.0",
-    "@rainbow-me/rainbowkit": "^1.0.10",
+    "@evmts/cli": "^0.10.0",
+    "@evmts/core": "^0.10.0",
+    "@rainbow-me/rainbowkit": "^1.0.11",
     "buffer": "^6.0.3",
     "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "util": "^0.12.5",
-    "viem": "~1.10.3",
-    "wagmi": "^1.4.1"
+    "viem": "~1.11.1",
+    "wagmi": "^1.4.2"
   },
   "devDependencies": {
-    "@evmts/bundler": "^0.8.0",
-    "@evmts/config": "^0.8.0",
-    "@evmts/ts-plugin": "^0.8.0",
-    "@evmts/vite-plugin": "^0.8.0",
+    "@evmts/bundler": "^0.10.0",
+    "@evmts/config": "^0.10.0",
+    "@evmts/ts-plugin": "^0.10.0",
+    "@evmts/vite-plugin": "^0.10.0",
     "@openzeppelin/contracts": "^4.9.3",
     "@testing-library/react": "^14.0.0",
-    "@types/react": "^18.2.21",
+    "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.4",
     "abitype": "^0.9.8",
@@ -42,6 +42,6 @@
     "solc": "0.8.21",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
-    "vitest": "^0.34.3"
+    "vitest": "^0.34.4"
   }
 }
