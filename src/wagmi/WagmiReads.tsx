@@ -1,5 +1,6 @@
-import { WagmiMintExample } from '../../contracts/WagmiMintExample.sol'
 import { Address, mainnet, useAccount, useContractRead, useNetwork } from 'wagmi'
+import { WagmiMintExample } from '../../contracts/WagmiMintExample.sol'
+import { addresses } from '../utils/addresses'
 
 export const WagmiReads = () => {
 	const { address, isConnected } = useAccount()
@@ -12,23 +13,28 @@ export const WagmiReads = () => {
 		 * Spreading in a method will spread abi, address and args
 		 * Hover over balanceOf and click go-to-definition should take you to the method definition in solidity if compiling from solidity
 		 */
-		...WagmiMintExample.read({ chainId }).balanceOf(address as Address),
+		...WagmiMintExample.read.balanceOf(address as Address),
+		address: addresses[WagmiMintExample.name][chainId as 10],
 		enabled: isConnected,
 	})
 	const { data: totalSupply } = useContractRead({
-		...WagmiMintExample.read({ chainId }).totalSupply(),
+		...WagmiMintExample.read.totalSupply(),
+		address: addresses[WagmiMintExample.name][chainId as 10],
 		enabled: isConnected,
 	})
 	const { data: tokenUri } = useContractRead({
-		...WagmiMintExample.read({ chainId }).tokenURI(BigInt(1)),
+		...WagmiMintExample.read.tokenURI(BigInt(1)),
+		address: addresses[WagmiMintExample.name][chainId as 10],
 		enabled: isConnected,
 	})
 	const { data: symbol } = useContractRead({
-		...WagmiMintExample.read({ chainId }).symbol(),
+		...WagmiMintExample.read.symbol(),
+		address: addresses[WagmiMintExample.name][chainId as 10],
 		enabled: isConnected,
 	})
 	const { data: ownerOf } = useContractRead({
-		...WagmiMintExample.read({ chainId }).ownerOf(BigInt(1)),
+		...WagmiMintExample.read.ownerOf(BigInt(1)),
+		address: addresses[WagmiMintExample.name][chainId as 10],
 		enabled: isConnected,
 	})
 	return (
